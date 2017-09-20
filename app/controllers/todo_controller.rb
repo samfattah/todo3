@@ -1,14 +1,14 @@
-class PagesController < ApplicationController
+class TodoController < ApplicationController
   def index
-    @todo=Todo.all
+    @todo = Todo.all
   end
 
   def show
-    @todo=Todo(params[:id])
+    @todo = Todo.find(params[:id])
   end
-
+ 
   def new
-    @todo=Todo.new
+    @todo = Todo.new
   end
 
   def create
@@ -24,7 +24,7 @@ class PagesController < ApplicationController
   private
 
   def todo_params
-    params.require(:page).permit(:item, :desc)
+    params.require(:todo).permit(:item, :desc, :author)
   end
 
 

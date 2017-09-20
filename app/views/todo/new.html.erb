@@ -1,10 +1,19 @@
 <h1>New Item</h1>
-<%= form_for @todo do |f| %>
-  <%= f.label :item %>
-  <%= f.text_field :item %>
 
+<%= form_for @todo do |f| %>
+
+<div>
+  <%= f.label :item %>
+  <%= f.text_field :item, placeholder: 'Item', required: true %>
+</div>
+<div>
   <%= f.label :desc %>
-  <%= f.text :desc %>
+  <%= f.text :desc, placeholder: 'Item', required: true %>
+</div>
+<div>
+  <%= f.label :author %>
+  <%= :author, placeholder: 'Author', required: true %>
+</div>
 
   <%= f.submit %>
 <% end %>
